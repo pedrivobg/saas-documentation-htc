@@ -7,92 +7,100 @@ Construído com HTML5, CSS3 e JavaScript puro. Sem frameworks. Deploy em 1 cliqu
 
 ## Índice
 
-1. [Pré-requisitos](#pré-requisitos)
-2. [Instalação local](#instalação-local)
-3. [Personalizando para sua agência](#personalizando-para-sua-agência)
-4. [Subindo para o GitHub](#subindo-para-o-github)
-5. [Ativando o GitHub Pages](#ativando-o-github-pages)
-6. [Embedando no GoHighLevel](#embedando-no-gohighlevel)
+1. [Instalação e configuração inicial](#instalação-e-configuração-inicial)
+2. [Personalizando para sua agência](#personalizando-para-sua-agência)
+3. [Subindo as alterações para o GitHub](#subindo-as-alterações-para-o-github)
+4. [Ativando o GitHub Pages](#ativando-o-github-pages)
+5. [Embedando no GoHighLevel](#embedando-no-gohighlevel)
+6. [Configurando o Voice AI](#configurando-o-voice-ai)
 7. [Estrutura de arquivos](#estrutura-de-arquivos)
+8. [Dúvidas frequentes](#dúvidas-frequentes)
 
 ---
 
-## Pré-requisitos
+## Instalação e configuração inicial
 
-- [Node.js](https://nodejs.org) v18 ou superior
-- [Git](https://git-scm.com) instalado
-- Conta no [GitHub](https://github.com)
-- Acesso de admin à sua conta no GoHighLevel (para o embed final)
+Você não precisa instalar Node.js, Git ou qualquer ferramenta de linha de comando.  
+Tudo é feito dentro do **Anti-Gravity**, uma IDE com IA integrada.
 
----
+### Passo 1 — Baixar o Anti-Gravity
 
-## Instalação local
+1. Acesse **[antigravity.ai](https://antigravity.ai)** e baixe a versão gratuita
+2. Escolha o instalador correto para o seu sistema: **Windows** ou **Mac**
+3. Instale normalmente e abra o programa
+4. Conecte sua conta Google quando solicitado
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/saas-documentation-htc.git
+### Passo 2 — Conectar sua conta GitHub
 
-# 2. Entre na pasta
-cd saas-documentation-htc
+1. Dentro do Anti-Gravity, clique em **Connect to GitHub**
+2. O navegador abrirá automaticamente para autenticação
+3. Faça login no GitHub e autorize o acesso
+4. Volte ao Anti-Gravity — a conexão estará ativa
 
-# 3. Instale as dependências
-npm install
+> Ainda não tem conta no GitHub? Crie gratuitamente em [github.com](https://github.com)
 
-# 4. Inicie o servidor local
-npm start
-```
+### Passo 3 — Fazer fork do repositório
 
-Abra `http://localhost:3000` no navegador. A documentação já estará rodando.
+1. Acesse o repositório oficial da documentação HTC:  
+   **[github.com/htc-community/saas-documentation]** ← link será disponibilizado
+2. Clique em **Fork** no canto superior direito
+3. Isso cria uma cópia do projeto na sua própria conta GitHub
+4. Você pode renomear o repositório para o nome da sua agência
+
+### Passo 4 — Clonar o repositório no Anti-Gravity
+
+1. No Anti-Gravity, clique em **Clone Repository**
+2. Selecione o repositório que você acabou de criar via fork
+3. Escolha uma pasta no seu computador para salvar os arquivos
+4. Aguarde o download — o projeto estará pronto para edição
 
 ---
 
 ## Personalizando para sua agência
 
 Toda a personalização é feita em **um único arquivo**: `docs/config.js`.  
-Abra esse arquivo em qualquer editor de texto (VS Code, Notepad++, etc.) e altere os valores.
+Abra esse arquivo no Anti-Gravity e altere apenas os valores entre aspas.
 
 ### Identidade visual
 
 ```javascript
 appName: 'Nome do Seu App',          // nome exibido no header e sidebar
 appTagline: 'Sua descrição aqui',    // subtítulo da página de introdução
-logoUrl: './assets/logo.svg',        // caminho para o logo (substitua o arquivo)
+logoUrl: './assets/logo.svg',        // caminho para o logo
 faviconUrl: './assets/favicon.ico',  // ícone da aba do navegador
 ```
 
 **Para trocar o logo:**
 1. Exporte o logo da sua agência em formato `.svg` ou `.png`
-2. Renomeie o arquivo para `logo.svg` (ou atualize o caminho em `logoUrl`)
-3. Coloque o arquivo em `docs/assets/`
-4. O logo antigo será substituído automaticamente
+2. Renomeie o arquivo para `logo.svg`
+3. Arraste o arquivo para a pasta `docs/assets/` dentro do Anti-Gravity
+4. O logo será substituído automaticamente no site
 
 ### Cores
 
 ```javascript
-primaryColor: '#FFD600',        // cor de fundo do sidebar — use a cor principal da sua marca
+primaryColor: '#FFD600',        // cor do sidebar — use a cor principal da sua marca
 primaryTextColor: '#111827',    // cor do texto dentro do sidebar
-accentColor: '#111827',         // cor de links, badges e destaques
+accentColor: '#111827',         // cor de links e destaques
 ```
 
-Para encontrar o código HEX da cor da sua marca, use [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/).
+> Para encontrar o código HEX da sua cor: [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/)
 
-### Informações de contato e suporte
+### Contato e suporte
 
 ```javascript
-supportEmail: 'suporte@suaagencia.com',   // e-mail de suporte exibido na seção 14.2
-supportWhatsApp: '+5511999999999',         // WhatsApp de suporte (com código do país)
-supportUrl: 'https://suaagencia.com',      // site da agência
+supportEmail: 'suporte@suaagencia.com',
+supportWhatsApp: '+5511999999999',
+supportUrl: 'https://suaagencia.com',
 ```
 
-### Nome do assistente de IA
+### Assistente de voz
 
 ```javascript
-aiName: 'Nome da IA',           // nome exibido no widget de chat
-aiWelcome: 'Olá! Como posso te ajudar?',  // mensagem inicial do assistente
-aiApiEndpoint: '',              // deixar vazio por enquanto (configurar depois)
+aiEnabled: true,
+aiName: 'Nexus',                    // nome exibido no widget
+aiGhlWidgetId: 'SEU_WIDGET_ID',     // preenchido após configurar o Voice AI (seção abaixo)
 ```
-
-O widget de IA já aparece visualmente na documentação. Para conectá-lo à IA nativa do GoHighLevel, siga as instruções da seção [Embedando no GoHighLevel](#embedando-no-gohighlevel).
 
 ### Seção exclusiva do plano (Seção 14)
 
@@ -102,157 +110,137 @@ customSectionTitle: 'Seu Plano',
 customFeatures: [
   {
     title: 'Nome da Feature',
-    desc: 'Descrição do que está incluso no plano.',
+    desc: 'Descrição do recurso incluso no plano.',
     icon: 'star'
   }
 ]
 ```
 
-Adicione quantas features quiser nesse array. Elas aparecem automaticamente na página 14.1.
+### Editando o conteúdo das páginas
 
-### Atualizando o conteúdo das páginas
+Cada página está em `docs/pages/`. Abra qualquer arquivo `.html` no Anti-Gravity e edite o texto diretamente.
 
-Cada página está em `docs/pages/`. Para editar o texto de uma página, abra o arquivo `.html` correspondente e edite diretamente o conteúdo entre as tags.
+Os títulos `<h2 id="...">` geram automaticamente os itens do TOC lateral. Não remova os atributos `id`.
 
-Os títulos `<h2 id="...">` geram automaticamente os itens do menu lateral direito (TOC). Não remova os atributos `id`.
-
-Substitua todos os marcadores `[IMAGEM: descrição]` por capturas de tela reais da sua plataforma usando a tag:
+Para adicionar screenshots reais, substitua os marcadores `[IMAGEM: descrição]` por:
 ```html
-<img src="./assets/screenshots/nome-do-arquivo.png" alt="Descrição da imagem">
+<img src="./assets/screenshots/nome-do-arquivo.png" alt="Descrição">
 ```
+E coloque o arquivo de imagem na pasta `docs/assets/screenshots/`.
+
+### Atualizando a página do Knowledge Base
+
+Sempre que editar qualquer conteúdo das páginas, abra também o arquivo  
+`docs/kb-full.html` e faça a mesma alteração no trecho correspondente.
+
+Esse arquivo é usado exclusivamente pelo assistente de voz para aprender o conteúdo da documentação. Sem essa atualização, o Voice AI continuará respondendo com informações antigas.
 
 ---
 
-## Subindo para o GitHub
+## Subindo as alterações para o GitHub
 
-Após personalizar, siga estes passos para subir as alterações:
+Após personalizar, envie as alterações de volta para o GitHub pelo Anti-Gravity:
 
-```bash
-# 1. Adicione todos os arquivos modificados
-git add .
-
-# 2. Crie um commit com descrição das mudanças
-git commit -m "Personalização da agência: cores, logo e conteúdo"
-
-# 3. Envie para o GitHub
-git push origin main
-```
-
-Se for a primeira vez que você está subindo para um repositório novo:
-
-```bash
-# Crie o repositório no GitHub (pelo site), depois conecte:
-git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git
-git branch -M main
-git push -u origin main
-```
+1. No Anti-Gravity, clique no ícone de **Source Control** (ou Git) na barra lateral
+2. Você verá a lista de arquivos modificados
+3. Escreva uma mensagem descrevendo a alteração (ex: `Atualização de cores e logo`)
+4. Clique em **Commit** e depois em **Push**
+5. As alterações já estão no GitHub
 
 ---
 
 ## Ativando o GitHub Pages
 
-O GitHub Pages serve o repositório como um site público gratuitamente.
+1. Abra seu repositório no GitHub
+2. Clique em **Settings** → **Pages**
+3. Em **Branch**, selecione `main`
+4. Na pasta, selecione `/docs`
+5. Clique em **Save**
 
-1. No GitHub, abra o repositório
-2. Clique em **Settings** (ícone de engrenagem)
-3. No menu lateral, clique em **Pages**
-4. Em **Source**, selecione **Deploy from a branch**
-5. Em **Branch**, selecione `main` e a pasta `/docs`
-6. Clique em **Save**
-
-Aguarde 1 a 2 minutos. A URL do site aparecerá no topo da página, no formato:
+Aguarde 1 a 2 minutos. A URL do site aparecerá no formato:
 ```
 https://seu-usuario.github.io/nome-do-repositorio/
 ```
 
-Copie essa URL — você vai precisar dela para o embed no GoHighLevel.
+Copie essa URL — você vai precisar dela para o embed e para o Voice AI.
 
 ---
 
 ## Embedando no GoHighLevel
 
-O GoHighLevel permite adicionar abas personalizadas na interface, onde você pode embedar qualquer URL como um iframe. Siga os passos abaixo para colocar a documentação dentro da plataforma dos seus clientes.
+### Opção 1 — Menu lateral (recomendado para começar)
 
-### Opção 1 — Aba no menu lateral do GoHighLevel
-
-1. Acesse sua conta de agência no GoHighLevel
+1. Acesse sua agência no GoHighLevel
 2. Vá em **Settings → Custom Menu Links**
 3. Clique em **+ Add Menu Link**
 4. Preencha:
-   - **Name:** Documentação (ou o nome que preferir)
-   - **URL:** cole a URL do GitHub Pages (ex: `https://seu-usuario.github.io/nome-do-repositorio/`)
-   - **Open in:** selecione **iFrame** para abrir dentro da plataforma
-   - **Icon:** escolha um ícone (sugestão: `book` ou `help-circle`)
-5. Ative a opção **Show for all sub-accounts** se quiser que apareça para todos os clientes
+   - **Name:** Documentação
+   - **URL:** URL do GitHub Pages
+   - **Open in:** iFrame
+   - **Icon:** book
+5. Ative **Show for all sub-accounts**
 6. Clique em **Save**
 
-A documentação agora aparece como uma aba no menu lateral para todos os usuários das subcontas da agência.
+### Opção 2 — Via Snapshot (para SaaS)
 
-### Opção 2 — Snapshot (recomendado para SaaS)
+Inclua o Custom Menu Link dentro do snapshot. Quando um novo cliente ativar o plano, a documentação já aparece automaticamente na conta dele.
 
-Se você está entregando um snapshot para os clientes, inclua a URL da documentação no campo de Custom Menu Link dentro do snapshot. Assim, quando um novo cliente ativa o plano, a documentação já aparece automaticamente na conta dele.
+---
 
-### Configurando o Voice AI Widget
+## Configurando o Voice AI
 
-A documentação já vem com um widget de voz embedado via script do GoHighLevel.
-Para ativá-lo com a IA da sua conta, siga os passos abaixo.
+O widget de voz já está integrado visualmente na documentação.  
+Para ativá-lo com a IA da sua conta GHL, siga os passos abaixo.
 
-#### Passo 1 — Criar o Knowledge Base
+### Passo 1 — Criar o Knowledge Base
 
-1. Na sua conta GHL, acesse `AI Agents → Knowledge Base → Create New`
-2. Nomeie como `Documentação [App da Agência]`
-3. Em **Web Crawler**, adicione a URL do seu GitHub Pages como tipo **Domain**
-4. Clique em **Crawl** e aguarde o processamento
+1. No GHL, acesse `AI Agents → Knowledge Base → Create New`
+2. Nome: `Documentação [App da Agência]`
+3. Em **Web Crawler**, adicione a seguinte URL como tipo **Exact URL**:
+   ```
+   https://seu-usuario.github.io/nome-do-repositorio/kb-full.html
+   ```
+4. Clique em **Crawl** e aguarde
 5. Salve o Knowledge Base
 
-#### Passo 2 — Criar o Voice AI Agent
+> Esta URL aponta para uma página especial que contém todo o conteúdo da documentação em um único lugar, permitindo que o GHL indexe tudo de uma vez.
 
-1. Acesse `AI Agents → Voice AI → New Agent`
-2. Defina o nome, o idioma (Português Brasil) e a voz do agente
-3. Em **Initial Message**, cole:
-   `Olá! Sou o [Nome da IA], assistente da documentação do [App da Agência]. Como posso te ajudar?`
-4. Em **Agent Goals**, clique em **Switch to Advanced Mode**
-5. Cole o prompt completo disponível em `prompts/voice-ai-prompt.md`
-6. Conecte o Knowledge Base criado no passo anterior
-7. No campo **Trigger Prompt**, cole:
-   `O usuário está perguntando sobre funcionalidades, configurações ou como usar a plataforma`
-8. Clique em **Evaluate** e resolva os itens críticos
-9. Salve o agente
+### Passo 2 — Criar o Voice AI Agent
 
-#### Passo 3 — Criar o Chat Widget com Voice AI
+1. `AI Agents → Voice AI → New Agent`
+2. Configure:
+   - **Agent Name:** nome do assistente (ex: Nexus)
+   - **Language:** Português (Brasil)
+   - **Initial Message:** `Olá! Sou o Nexus, assistente da documentação do [App da Agência]. Como posso te ajudar hoje?`
+3. Em **Agent Goals**, clique em **Switch to Advanced Mode**
+4. Cole o prompt completo do arquivo `docs/prompts/voice-ai-prompt.md`
+5. Conecte o Knowledge Base criado no passo anterior
+6. **Trigger Prompt:** `O usuário está perguntando sobre funcionalidades, configurações ou como usar a plataforma`
+7. Clique em **Evaluate**, resolva os itens críticos e salve
 
-1. Acesse `Sites → Chat Widgets → New Widget`
-2. Selecione o tipo **Voice AI**
-3. Conecte ao agente criado no passo 2
-4. Configure a cor para coincidir com `primaryColor` do `config.js`
-5. Clique em **Get Code** e copie o `data-widget-id`
+### Passo 3 — Criar o Chat Widget
 
-#### Passo 4 — Conectar ao config.js
+1. `Sites → Chat Widgets → New Widget → Voice AI`
+2. Conecte ao agente criado acima
+3. Configure a cor para coincidir com o `primaryColor` do `config.js`
+4. Clique em **Get Code** e copie o `data-widget-id`
+
+### Passo 4 — Conectar ao config.js
 
 Abra `docs/config.js` e preencha:
-
 ```javascript
-aiEnabled: true,
-aiName: 'Nexus',                 // nome do assistente
-aiGhlWidgetId: 'SEU_WIDGET_ID', // ID copiado do Get Code
+aiGhlWidgetId: 'COLE_O_WIDGET_ID_AQUI',
 ```
 
-#### Passo 5 — Publicar
+Salve, faça commit e push. Aguarde 1-2 minutos e teste.
 
-```bash
-git add .
-git commit -m "feat: Voice AI conectado"
-git push origin main
-```
+### Mantendo o Voice AI atualizado
 
-Aguarde 1-2 minutos e teste no seu GitHub Pages.
-
-#### Mantendo o Knowledge Base atualizado
-
-Sempre que editar páginas da documentação, volte em
-`AI Agents → Knowledge Base → [seu KB] → Re-crawl`
-para que o assistente de voz aprenda o conteúdo novo.
-O GHL atualiza imediatamente — nenhuma outra configuração é necessária.
+Sempre que atualizar páginas da documentação e o `kb-full.html`:
+1. Faça o push normalmente para o GitHub
+2. No GHL, acesse `AI Agents → Knowledge Base → [seu KB]`
+3. Clique em **Re-crawl**
+4. O assistente aprende o novo conteúdo imediatamente
 
 ---
 
@@ -260,35 +248,36 @@ O GHL atualiza imediatamente — nenhuma outra configuração é necessária.
 
 ```
 saas-documentation-htc/
-├── package.json              ← dependências (Express)
-├── server.js                 ← servidor local (npm start)
-├── README.md                 ← este arquivo
+├── README.md                     ← este arquivo
 └── docs/
-    ├── index.html            ← shell principal da documentação
-    ├── config.js             ← ÚNICO ARQUIVO QUE VOCÊ PRECISA EDITAR
+    ├── index.html                ← shell principal
+    ├── config.js                 ← ÚNICO ARQUIVO QUE VOCÊ PRECISA EDITAR
+    ├── kb-full.html              ← página do Knowledge Base do Voice AI
     └── assets/
         ├── css/
-        │   ├── style.css         ← design system (não editar)
-        │   └── components.css    ← componentes (não editar)
+        │   ├── style.css             ← design system (não editar)
+        │   └── components.css        ← componentes (não editar)
         ├── js/
-        │   ├── app.js            ← lógica de navegação (não editar)
-        │   ├── ai-widget.js      ← widget de IA (não editar)
-        │   └── search-index.js   ← índice de busca (não editar)
-        ├── logo.svg              ← SUBSTITUIR pelo logo da agência
-        ├── favicon.ico           ← SUBSTITUIR pelo favicon da agência
-        └── screenshots/          ← ADICIONAR capturas de tela aqui
-    └── pages/
-        ├── getting-started/      ← páginas 1.1 a 1.3
-        ├── crm/                  ← páginas 2.1 a 2.5
-        ├── conversations/        ← páginas 3.1 a 3.2
-        ├── calendars/            ← página 4.1
-        ├── pipelines/            ← página 5.1
-        ├── automations/          ← páginas 6.1 a 6.4
-        ├── ai/                   ← páginas 10.1 a 10.2
-        ├── reputation/           ← página 11.1
-        ├── reports/              ← página 12.1
-        ├── settings/             ← páginas 13.1 a 13.3
-        └── agency/               ← páginas 14.1 a 14.2
+        │   ├── app.js                ← navegação (não editar)
+        │   ├── ai-widget.js          ← widget de voz (não editar)
+        │   └── search-index.js       ← busca (não editar)
+        ├── logo.svg                  ← SUBSTITUIR pelo logo da agência
+        ├── favicon.ico               ← SUBSTITUIR pelo favicon
+        └── screenshots/              ← ADICIONAR capturas de tela aqui
+    ├── pages/
+    │   ├── getting-started/          ← páginas 1.1 a 1.3
+    │   ├── crm/                      ← páginas 2.1 a 2.5
+    │   ├── conversations/            ← páginas 3.1 a 3.2
+    │   ├── calendars/                ← página 4.1
+    │   ├── pipelines/                ← página 5.1
+    │   ├── automations/              ← páginas 6.1 a 6.4
+    │   ├── ai/                       ← páginas 10.1 a 10.2
+    │   ├── reputation/               ← página 11.1
+    │   ├── reports/                  ← página 12.1
+    │   ├── settings/                 ← páginas 13.1 a 13.3
+    │   └── agency/                   ← páginas 14.1 a 14.2
+    └── prompts/
+        └── voice-ai-prompt.md        ← prompt completo do Voice AI
 ```
 
 ---
@@ -296,13 +285,13 @@ saas-documentation-htc/
 ## Dúvidas frequentes
 
 **Posso usar meu próprio domínio?**  
-Sim. No GitHub Pages, vá em Settings > Pages > Custom Domain e configure seu domínio. Você vai precisar adicionar um registro CNAME no seu provedor de DNS apontando para `seu-usuario.github.io`.
-
-**O site funciona sem internet?**  
-Parcialmente. Os ícones (Lucide via CDN) precisam de conexão. Para uso offline completo, baixe o Lucide e coloque localmente em `docs/assets/js/lucide.min.js`, atualizando o `<script>` no `index.html`.
+Sim. No GitHub, vá em Settings → Pages → Custom Domain. Adicione um registro CNAME no seu provedor de DNS apontando para `seu-usuario.github.io`.
 
 **Como adicionar novas páginas?**  
-Crie um novo arquivo `.html` em `docs/pages/sua-pasta/`, siga o template das páginas existentes e adicione a entrada correspondente no array `NAV_STRUCTURE` dentro de `docs/assets/js/app.js`.
+Crie um arquivo `.html` em `docs/pages/sua-pasta/`, copie a estrutura de uma página existente e adicione a entrada em `NAV_STRUCTURE` dentro de `docs/assets/js/app.js`. Adicione também o conteúdo novo em `docs/kb-full.html` e faça re-crawl no GHL.
 
-**Como traduzir para outro idioma?**  
-Edite diretamente o conteúdo HTML de cada página em `docs/pages/`. Para múltiplos idiomas, estruture em subpastas por idioma (`pages/en/`, `pages/pt/`) e ajuste o `loadPage()` em `app.js` para ler o idioma do `config.js`.
+**O Voice AI está respondendo coisas erradas ou desatualizadas.**  
+Verifique se o `kb-full.html` foi atualizado com as últimas alterações e faça re-crawl no Knowledge Base do GHL.
+
+**O site abre mas mostra só o README.**  
+Confirme que no GitHub Pages a pasta selecionada é `/docs`, não `/ (root)`.

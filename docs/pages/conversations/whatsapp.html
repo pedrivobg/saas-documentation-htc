@@ -36,23 +36,42 @@
     </ul>
   </section><hr class="section-divider">
   <section id="connecting"><h2>🔗 Conectando o WhatsApp</h2>
-    <div class="tabs"><button class="tab-btn active" data-tab="tab-unofficial">API Não Oficial</button><button class="tab-btn" data-tab="tab-official">API Oficial</button></div>
-    <div class="tab-content active" id="tab-unofficial">
+    <div class="tabs"><button class="tab-btn active" data-tab="tab-official">API Oficial</button><button class="tab-btn" data-tab="tab-unofficial">API Não Oficial</button></div>
+    
+    <div class="tab-content active" id="tab-official">
+      <p>Para conectar a API oficial, acesse <strong>Configurações › WhatsApp</strong> (não em Integrações). Você tem duas opções de conexão:</p>
+      
+      <h3 style="margin-top: 24px; margin-bottom: 16px;">1. Com Coexistência (Recomendado)</h3>
+      <p style="margin-bottom: 16px;">Permite usar o WhatsApp tanto no sistema quanto no aplicativo mobile do seu celular.</p>
       <div class="step-cards">
-        <div class="step-card"><div class="step-number">1</div><div><p>Configurações › Integrações › WhatsApp</p></div></div>
-        <div class="step-card"><div class="step-number">2</div><div><p>Clique em "Conectar via QR Code"</p></div></div>
-        <div class="step-card"><div class="step-number">3</div><div><p>Abra o WhatsApp no celular › 3 pontos › Aparelhos Conectados</p></div></div>
-        <div class="step-card"><div class="step-number">4</div><div><p>Clique em "Conectar Aparelho" e escaneie o QR</p></div></div>
-        <div class="step-card"><div class="step-number">5</div><div><p>Aguarde a confirmação</p></div></div>
+        <div class="step-card"><div class="step-number">1</div><div><p>No botão de coexistência, selecione sua BM e um número de WhatsApp Business já existente.</p></div></div>
+        <div class="step-card"><div class="step-number">2</div><div><p>Insira o número. O sistema enviará um código para o seu WhatsApp no celular.</p></div></div>
+        <div class="step-card"><div class="step-number">3</div><div><p>Clicando no código recebido, a câmera será aberta.</p></div></div>
+        <div class="step-card"><div class="step-number">4</div><div><p>Escaneie o QR code exibido na tela do sistema.</p></div></div>
+        <div class="step-card"><div class="step-number">5</div><div><p>Pronto! A coexistência está ativada (sistema + mobile).</p></div></div>
+      </div>
+      
+      <h3 style="margin-top: 32px; margin-bottom: 16px;">2. Forma Antiga (Sem Coexistência)</h3>
+      <p style="margin-bottom: 16px;">Funciona <strong>apenas dentro do sistema</strong>, sem acesso pelo app mobile. Exige pagamento prévio (mínimo de ~$10 na Meta).</p>
+      <div class="step-cards">
+        <div class="step-card"><div class="step-number">1</div><div><p>Ao seguir o fluxo antigo, você receberá um SMS de 6 dígitos (em vez de usar a câmera).</p></div></div>
+        <div class="step-card"><div class="step-number">2</div><div><p>Insira o código recebido no sistema.</p></div></div>
+        <div class="step-card"><div class="step-number">3</div><div><p>O número ficará preso ao sistema e desconectará do seu celular.</p></div></div>
       </div>
     </div>
-    <div class="tab-content" id="tab-official">
-      <div class="step-cards">
-        <div class="step-card"><div class="step-number">1</div><div><p>Configurações › Integrações › WhatsApp Business API</p></div></div>
-        <div class="step-card"><div class="step-number">2</div><div><p>Clique em "Iniciar Aprovação Meta"</p></div></div>
-        <div class="step-card"><div class="step-number">3</div><div><p>Siga o processo de verificação da Meta Business</p></div></div>
-        <div class="step-card"><div class="step-number">4</div><div><p>Após aprovação (2-5 dias), configure os templates</p></div></div>
-        <div class="step-card"><div class="step-number">5</div><div><p>Associe o número aprovado</p></div></div>
+
+    <div class="tab-content" id="tab-unofficial">
+      <p style="margin-bottom: 24px;">Para utilizar integrações não oficiais, recomendamos as duas principais plataformas abaixo. Clique para ver o passo a passo oficial de integração:</p>
+      
+      <div class="feature-grid">
+        <a href="https://doc.stevo.chat/docs/integracao-ghl/conectando-stevo-ao-ghl/" target="_blank" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+          <h3>Stevo</h3>
+          <p>Acessar documentação passo a passo</p>
+        </a>
+        <a href="https://zaptoswpp.com/" target="_blank" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+          <h3>Zaptos</h3>
+          <p>Acessar site e tutoriais</p>
+        </a>
       </div>
     </div>
   </section>
