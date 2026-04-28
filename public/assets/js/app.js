@@ -117,6 +117,22 @@ function applyConfig() {
   if (sidebarLogo) { sidebarLogo.src = APP_CONFIG.logoUrl; sidebarLogo.alt = 'Logo'; }
 
   document.title = APP_CONFIG.appName + ' — Documentação';
+
+  initAIWidget();
+}
+
+/* ---------- AI Widget ---------- */
+function initAIWidget() {
+  if (!APP_CONFIG.aiEnabled || !APP_CONFIG.aiGhlWidgetId) return;
+  
+  // Check if already injected
+  if (document.querySelector('script[data-widget-id]')) return;
+
+  const script = document.createElement('script');
+  script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+  script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+  script.setAttribute('data-widget-id', APP_CONFIG.aiGhlWidgetId);
+  document.body.appendChild(script);
 }
 
 /* ---------- Sidebar ---------- */

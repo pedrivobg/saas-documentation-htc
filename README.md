@@ -192,18 +192,67 @@ A documentação agora aparece como uma aba no menu lateral para todos os usuár
 
 Se você está entregando um snapshot para os clientes, inclua a URL da documentação no campo de Custom Menu Link dentro do snapshot. Assim, quando um novo cliente ativa o plano, a documentação já aparece automaticamente na conta dele.
 
-### Conectando o widget de IA nativa do GoHighLevel
+### Configurando o Voice AI Widget
 
-Após embedar a documentação, você pode conectar o widget de IA visível na documentação à IA conversacional nativa do GoHighLevel:
+A documentação já vem com um widget de voz embedado via script do GoHighLevel.
+Para ativá-lo com a IA da sua conta, siga os passos abaixo.
 
-1. No GoHighLevel, configure um agente de **Conversation AI** (Settings > Conversation AI)
-2. Treine o agente com o conteúdo desta documentação (você pode usar o chat widget configurado para responder sobre a plataforma)
-3. No GoHighLevel, vá em **Settings > Chat Widget** e copie o código de embed do widget
-4. No arquivo `public/config.js`, cole a URL do endpoint gerado pelo GoHighLevel no campo `aiApiEndpoint`
-5. Suba novamente para o GitHub (`git add . && git commit -m "IA conectada" && git push`)
-6. Aguarde 1 minuto para o GitHub Pages atualizar
+#### Passo 1 — Criar o Knowledge Base
 
-O widget de chat dentro da documentação passará a responder usando a IA da sua plataforma.
+1. Na sua conta GHL, acesse `AI Agents → Knowledge Base → Create New`
+2. Nomeie como `Documentação [App da Agência]`
+3. Em **Web Crawler**, adicione a URL do seu GitHub Pages como tipo **Domain**
+4. Clique em **Crawl** e aguarde o processamento
+5. Salve o Knowledge Base
+
+#### Passo 2 — Criar o Voice AI Agent
+
+1. Acesse `AI Agents → Voice AI → New Agent`
+2. Defina o nome, o idioma (Português Brasil) e a voz do agente
+3. Em **Initial Message**, cole:
+   `Olá! Sou o [Nome da IA], assistente da documentação do [App da Agência]. Como posso te ajudar?`
+4. Em **Agent Goals**, clique em **Switch to Advanced Mode**
+5. Cole o prompt completo disponível em `prompts/voice-ai-prompt.md`
+6. Conecte o Knowledge Base criado no passo anterior
+7. No campo **Trigger Prompt**, cole:
+   `O usuário está perguntando sobre funcionalidades, configurações ou como usar a plataforma`
+8. Clique em **Evaluate** e resolva os itens críticos
+9. Salve o agente
+
+#### Passo 3 — Criar o Chat Widget com Voice AI
+
+1. Acesse `Sites → Chat Widgets → New Widget`
+2. Selecione o tipo **Voice AI**
+3. Conecte ao agente criado no passo 2
+4. Configure a cor para coincidir com `primaryColor` do `config.js`
+5. Clique em **Get Code** e copie o `data-widget-id`
+
+#### Passo 4 — Conectar ao config.js
+
+Abra `public/config.js` e preencha:
+
+```javascript
+aiEnabled: true,
+aiName: 'Nexus',                 // nome do assistente
+aiGhlWidgetId: 'SEU_WIDGET_ID', // ID copiado do Get Code
+```
+
+#### Passo 5 — Publicar
+
+```bash
+git add .
+git commit -m "feat: Voice AI conectado"
+git push origin main
+```
+
+Aguarde 1-2 minutos e teste no seu GitHub Pages.
+
+#### Mantendo o Knowledge Base atualizado
+
+Sempre que editar páginas da documentação, volte em
+`AI Agents → Knowledge Base → [seu KB] → Re-crawl`
+para que o assistente de voz aprenda o conteúdo novo.
+O GHL atualiza imediatamente — nenhuma outra configuração é necessária.
 
 ---
 

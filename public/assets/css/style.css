@@ -92,3 +92,12 @@ tbody tr:hover { background: var(--color-accent-light); }
 .badge--gray { background: var(--color-accent-light); color: var(--color-text-muted); }
 
 .image-placeholder { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 48px 24px; background: var(--color-accent-light); border: 2px dashed var(--color-border); border-radius: var(--radius-md); margin: 24px 0; font-size: var(--text-sm); color: var(--color-text-muted); text-align: center; font-family: var(--font-sans); }
+
+/* IA Widget Fix (LeadConnector) */
+chat-widget {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 999999 !important;
+}
+

@@ -13,9 +13,11 @@ const APP_CONFIG = {
   bgColor: '#F9FAFB',
   fontFamily: "'Sora', Arial, sans-serif",
 
-  // AI WIDGET (configurar depois)
-  aiEnabled: false,
-  aiApiEndpoint: '',
+  // AI WIDGET (Voice AI)
+  aiEnabled: true,
+  aiName: 'Nexus',
+  aiGhlWidgetId: '69f029c62d7c5e0a0110f377',
+  aiApiEndpoint: '', // mantido para compatibilidade se necessário
 
   // IDIOMA
   defaultLanguage: 'pt-BR',
