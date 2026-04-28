@@ -1,0 +1,35 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><a href="?page=pages/automations/what-are-automations.html" onclick="event.preventDefault();loadPage('pages/automations/what-are-automations.html')">Automações</a><span class="separator">›</span><span class="current">Construtor Visual</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="git-merge"></i></div><h1>Construtor Visual de Workflows</h1><p class="page-summary">Tour do canvas de automação e como criar seu primeiro workflow.</p></header>
+
+  <section id="canvas-tour"><h2>🖥 Tour do Canvas</h2>
+    <div class="image-placeholder"><i data-lucide="image"></i> [IMAGEM: screenshot do canvas de workflow com nós e conexões]</div>
+    <ol><li><strong>Toolbar</strong> — adicionar nós, fazer zoom, desfazer</li><li><strong>Canvas</strong> — área de construção do workflow</li><li><strong>Painel lateral</strong> — configurações do nó selecionado</li><li><strong>Botão de teste</strong> — simular o workflow com um contato real</li><li><strong>Botão de ativar</strong> — ligar/desligar o workflow</li></ol>
+  </section><hr class="section-divider">
+  <section id="node-types"><h2>🧩 Tipos de Nós</h2>
+    <h3>Triggers (Início)</h3><div class="tag-showcase"><span class="tag-pill">Form Submitted</span><span class="tag-pill">Customer Reply</span><span class="tag-pill">Appointment Booked</span><span class="tag-pill">Tag Added</span><span class="tag-pill">Pipeline Stage Changed</span><span class="tag-pill">Payment Received</span><span class="tag-pill">Date/Time Based</span><span class="tag-pill">Stale Opportunity</span></div>
+    <h3>Comunicação</h3><div class="tag-showcase"><span class="tag-pill" style="background:#DBEAFE;color:#1E40AF">Send SMS/WhatsApp</span><span class="tag-pill" style="background:#DBEAFE;color:#1E40AF">Send Email</span><span class="tag-pill" style="background:#DBEAFE;color:#1E40AF">Send Internal Notification</span><span class="tag-pill" style="background:#DBEAFE;color:#1E40AF">Create Task</span></div>
+    <h3>CRM</h3><div class="tag-showcase"><span class="tag-pill" style="background:#D1FAE5;color:#065F46">Add Tag</span><span class="tag-pill" style="background:#D1FAE5;color:#065F46">Remove Tag</span><span class="tag-pill" style="background:#D1FAE5;color:#065F46">Update Contact</span><span class="tag-pill" style="background:#D1FAE5;color:#065F46">Create Opportunity</span></div>
+    <h3>Controle de Fluxo</h3><div class="tag-showcase"><span class="tag-pill" style="background:#FEF3C7;color:#92400E">Wait</span><span class="tag-pill" style="background:#FEF3C7;color:#92400E">If/Else</span><span class="tag-pill" style="background:#FEF3C7;color:#92400E">Go To Workflow</span><span class="tag-pill" style="background:#FEF3C7;color:#92400E">End Workflow</span></div>
+  </section><hr class="section-divider">
+  <section id="first-workflow"><h2>🚀 Criando seu Primeiro Workflow</h2>
+    <div class="step-cards">
+      <div class="step-card"><div class="step-number">1</div><div><p>Automações › Criar Novo Workflow</p></div></div>
+      <div class="step-card"><div class="step-number">2</div><div><p>Clique em "+ Adicionar Trigger" e escolha o evento inicial</p></div></div>
+      <div class="step-card"><div class="step-number">3</div><div><p>Clique no "+" abaixo do trigger para adicionar a primeira ação</p></div></div>
+      <div class="step-card"><div class="step-number">4</div><div><p>Configure o conteúdo da mensagem no painel lateral</p></div></div>
+      <div class="step-card"><div class="step-number">5</div><div><p>Adicione mais nós conforme necessário</p></div></div>
+      <div class="step-card"><div class="step-number">6</div><div><p>Use o botão "Testar" para simular com um contato de teste</p></div></div>
+      <div class="step-card"><div class="step-number">7</div><div><p>Clique em "Publicar" para ativar</p></div></div>
+    </div>
+  </section><hr class="section-divider">
+  <section id="tips"><h2>💡 Dicas de Boas Práticas</h2>
+    <div class="callout callout--success"><span class="callout-label">DICA</span> Sempre teste o workflow com seu próprio número/e-mail antes de ativar para contatos reais.</div>
+    <ul><li>Dê nomes descritivos (ex: "01. Lead Novo — WhatsApp")</li><li>Use Wait de 1-2 minutos entre trigger e primeira mensagem</li><li>Configure "Allow Re-entry" com cuidado — geralmente desativado</li><li>Use If/Else para tratar leads que já estão em outras etapas</li><li>Adicione notificação interna nos workflows críticos</li></ul>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/automations/what-are-automations.html" onclick="event.preventDefault();loadPage('pages/automations/what-are-automations.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 6.1 — Automações</span></a>
+    <a href="?page=pages/automations/triggers.html" class="next" onclick="event.preventDefault();loadPage('pages/automations/triggers.html')"><span class="nav-label">Próxima</span><span class="nav-title">6.3 — Triggers Disponíveis →</span></a>
+  </nav>
+</article>

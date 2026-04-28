@@ -1,0 +1,35 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><a href="?page=pages/agency/features.html" onclick="event.preventDefault();loadPage('pages/agency/features.html')">Seu Plano</a><span class="separator">›</span><span class="current">Suporte</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="headphones"></i></div><h1>Suporte Dedicado</h1><p class="page-summary">Canais de atendimento, horários e como abrir um chamado.</p></header>
+
+  <section id="support-channels"><h2>📞 Canais de Suporte</h2>
+    <p>Se você não encontrou a resposta aqui na documentação, nossa equipe está disponível pelos canais abaixo.</p>
+    <div class="feature-grid" id="support-cards-grid">
+      <div class="support-card">
+        <div class="feature-card-icon"><i data-lucide="book-open"></i></div>
+        <h3>Documentação</h3>
+        <p>Você já está aqui! Use a busca no topo para encontrar respostas rápidas.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      const grid = document.getElementById('support-cards-grid');
+      if (grid && typeof APP_CONFIG !== 'undefined') {
+        if (APP_CONFIG.supportWhatsApp) {
+          grid.innerHTML += `<div class="support-card"><div class="feature-card-icon"><i data-lucide="smartphone"></i></div><h3>WhatsApp</h3><p>${APP_CONFIG.supportWhatsApp}</p><a href="https://wa.me/${APP_CONFIG.supportWhatsApp.replace(/\D/g,'')}" class="btn" target="_blank">Abrir WhatsApp</a></div>`;
+        }
+        if (APP_CONFIG.supportEmail) {
+          grid.innerHTML += `<div class="support-card"><div class="feature-card-icon"><i data-lucide="mail"></i></div><h3>E-mail</h3><p>${APP_CONFIG.supportEmail}</p><a href="mailto:${APP_CONFIG.supportEmail}" class="btn">Enviar E-mail</a></div>`;
+        }
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    })();
+  </script>
+
+  <nav class="page-nav">
+    <a href="?page=pages/agency/features.html" onclick="event.preventDefault();loadPage('pages/agency/features.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 14.1 — Funcionalidades</span></a>
+    <div></div>
+  </nav>
+</article>

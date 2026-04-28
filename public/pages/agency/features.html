@@ -1,0 +1,56 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><span class="current">Funcionalidades do Plano</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="package"></i></div><h1>Funcionalidades Exclusivas do Plano <span class="badge">Exclusivo</span></h1><p class="page-summary">Recursos especiais incluídos no seu plano com a agência.</p></header>
+
+  <section id="custom-features"><h2>🌟 Recursos do Seu Plano</h2>
+    <p>Além de todas as funcionalidades padrão da plataforma, o seu plano inclui recursos e serviços adicionais configurados especificamente para o seu negócio pela sua agência.</p>
+    <div class="feature-grid" id="custom-features-grid"></div>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> Os recursos exibidos aqui são específicos do plano que você contratou. Para adicionar outros recursos, entre em contato com seu gerente de conta.</div>
+  </section><hr class="section-divider">
+  <section id="comparison"><h2>📊 Comparativo de Planos</h2>
+    <table id="plans-table"><thead><tr><th>Recurso</th></tr></thead><tbody>
+      <tr><td>Subcontas</td></tr>
+      <tr><td>IA de Conversação</td></tr>
+      <tr><td>IA de Voz</td></tr>
+      <tr><td>Suporte</td></tr>
+      <tr><td>Trial</td></tr>
+    </tbody></table>
+  </section>
+
+  <script>
+    // Populate custom features from config
+    (function() {
+      const grid = document.getElementById('custom-features-grid');
+      if (grid && typeof APP_CONFIG !== 'undefined' && APP_CONFIG.customFeatures) {
+        APP_CONFIG.customFeatures.forEach(f => {
+          grid.innerHTML += `<div class="feature-card"><div class="feature-card-icon"><i data-lucide="${f.icon}"></i></div><h3>${f.title}</h3><p>${f.desc}</p></div>`;
+        });
+      }
+      // Populate plans table
+      const table = document.getElementById('plans-table');
+      if (table && typeof APP_CONFIG !== 'undefined' && APP_CONFIG.plans) {
+        const thead = table.querySelector('thead tr');
+        APP_CONFIG.plans.forEach(p => {
+          const isCurrent = p.name === APP_CONFIG.currentPlan;
+          thead.innerHTML += `<th>${p.name}${isCurrent ? ' <span class="badge">Seu plano</span>' : ''}</th>`;
+        });
+        const rows = table.querySelectorAll('tbody tr');
+        const fields = ['subaccounts', 'conversationAI', 'voiceAI', 'support', 'trial'];
+        rows.forEach((row, i) => {
+          APP_CONFIG.plans.forEach(p => {
+            let val = p[fields[i]];
+            if (val === true) val = '✓';
+            if (val === false) val = '—';
+            row.innerHTML += `<td>${val}</td>`;
+          });
+        });
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    })();
+  </script>
+
+  <nav class="page-nav">
+    <a href="?page=pages/settings/integrations.html" onclick="event.preventDefault();loadPage('pages/settings/integrations.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 13.3 — Integrações</span></a>
+    <a href="?page=pages/agency/support.html" class="next" onclick="event.preventDefault();loadPage('pages/agency/support.html')"><span class="nav-label">Próxima</span><span class="nav-title">14.2 — Suporte Dedicado →</span></a>
+  </nav>
+</article>

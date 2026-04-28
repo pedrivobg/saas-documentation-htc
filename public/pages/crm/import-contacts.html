@@ -1,0 +1,37 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><a href="?page=pages/crm/overview.html" onclick="event.preventDefault();loadPage('pages/crm/overview.html')">CRM e Contatos</a><span class="separator">›</span><span class="current">Importação de Contatos</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="upload"></i></div><h1>Importação de Contatos</h1><p class="page-summary">Importar sua base de contatos existente por CSV, passo a passo.</p></header>
+
+  <section id="before-importing"><h2>✅ Antes de Importar</h2>
+    <ul class="checklist">
+      <li><i data-lucide="check-circle"></i> Certifique-se de que seu CSV tem as colunas: nome, telefone, e-mail</li>
+      <li><i data-lucide="check-circle"></i> Formate telefones com DDI: +55 11 99999-9999</li>
+      <li><i data-lucide="check-circle"></i> Remova duplicatas da planilha antes de importar</li>
+      <li><i data-lucide="check-circle"></i> Limite recomendado por lote: até 5.000 contatos</li>
+    </ul>
+    <div class="callout callout--warning"><span class="callout-label">ATENÇÃO</span> Importar uma lista sem permissão de contato pode violar leis de privacidade (LGPD). Importe apenas contatos que consentiram em receber comunicações.</div>
+  </section><hr class="section-divider">
+  <section id="import-steps"><h2>📥 Passo a Passo da Importação</h2>
+    <div class="step-cards">
+      <div class="step-card"><div class="step-number">1</div><div><h4>Baixar o modelo</h4><p>Contatos › Importar › Baixar CSV modelo</p></div></div>
+      <div class="step-card"><div class="step-number">2</div><div><h4>Preencher a planilha</h4><p>Seguir as colunas do modelo exatamente</p></div></div>
+      <div class="step-card"><div class="step-number">3</div><div><h4>Fazer o upload</h4><p>Arrastar o arquivo ou clicar para selecionar</p></div></div>
+      <div class="step-card"><div class="step-number">4</div><div><h4>Mapear as colunas</h4><p>Indicar qual coluna da sua planilha corresponde a qual campo do CRM</p></div></div>
+      <div class="step-card"><div class="step-number">5</div><div><h4>Configurar opções</h4><p>Definir tags a aplicar, pipeline de destino, tratamento de duplicatas</p></div></div>
+      <div class="step-card"><div class="step-number">6</div><div><h4>Revisar e confirmar</h4><p>Prévia dos primeiros contatos antes de confirmar</p></div></div>
+    </div>
+  </section><hr class="section-divider">
+  <section id="duplicates"><h2>🔄 Tratamento de Duplicatas</h2>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> O sistema detecta duplicatas pelo e-mail ou telefone. Você escolhe o que acontece:</div>
+    <div class="feature-grid">
+      <div class="feature-card"><h3>Pular</h3><p>Mantém o contato existente sem alterações</p></div>
+      <div class="feature-card"><h3>Atualizar</h3><p>Atualiza os campos do contato existente com os dados do CSV</p></div>
+      <div class="feature-card"><h3>Criar novo</h3><p>Cria um segundo contato mesmo com dados iguais (não recomendado)</p></div>
+    </div>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/crm/custom-fields.html" onclick="event.preventDefault();loadPage('pages/crm/custom-fields.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 2.4 — Campos Personalizados</span></a>
+    <a href="?page=pages/conversations/unified-inbox.html" class="next" onclick="event.preventDefault();loadPage('pages/conversations/unified-inbox.html')"><span class="nav-label">Próxima</span><span class="nav-title">3.1 — Inbox Unificado →</span></a>
+  </nav>
+</article>

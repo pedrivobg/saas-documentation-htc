@@ -1,0 +1,64 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><a href="?page=pages/conversations/unified-inbox.html" onclick="event.preventDefault();loadPage('pages/conversations/unified-inbox.html')">Conversas</a><span class="separator">›</span><span class="current">WhatsApp</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="smartphone"></i></div><h1>WhatsApp</h1><p class="page-summary">Envie e receba mensagens de WhatsApp diretamente do CRM.</p></header>
+
+  <section id="intro"><h2>📱 WhatsApp no [App da Agência]</h2>
+    <p>O WhatsApp é o canal de comunicação mais usado no Brasil. Na plataforma, você pode enviar e receber mensagens de WhatsApp diretamente do CRM, automatizar respostas e manter todo o histórico organizado.</p>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> A plataforma suporta dois tipos de integração. A diferença é importante para escolher o que funciona melhor para o seu volume de mensagens.</div>
+  </section><hr class="section-divider">
+  <section id="api-comparison"><h2>⚖️ API Não Oficial × API Oficial</h2>
+    <table><thead><tr><th>Característica</th><th>API Não Oficial</th><th>API Oficial (WhatsApp Business)</th></tr></thead><tbody>
+      <tr><td>Configuração</td><td>QR code simples</td><td>Aprovação da Meta (2-5 dias)</td></tr>
+      <tr><td>Custo</td><td>Incluso no plano</td><td>Custo por conversa (variável)</td></tr>
+      <tr><td>Templates</td><td>Mensagem livre</td><td>Templates aprovados obrigatórios para 1º contato</td></tr>
+      <tr><td>Volume</td><td>Pequeno/médio</td><td>Qualquer volume</td></tr>
+      <tr><td>Risco</td><td>Possível suspensão se usado incorretamente</td><td>Sem risco</td></tr>
+      <tr><td>Indicado para</td><td>Testes, volumes menores, início</td><td>Uso profissional em escala</td></tr>
+    </tbody></table>
+    <div class="callout callout--warning"><span class="callout-label">ATENÇÃO</span> Se usar API não oficial: não envie mensagens em massa para listas frias. O WhatsApp pode suspender o número por spam.</div>
+  </section><hr class="section-divider">
+  <section id="window-24h"><h2>⏰ Regra das 24 Horas</h2>
+    <div class="callout callout--warning"><span class="callout-label">IMPORTANTE</span> O WhatsApp só permite enviar mensagens livres dentro das 24 horas após o último contato do cliente. Após esse prazo, é necessário usar templates aprovados (API Oficial) ou aguardar o cliente iniciar a conversa.</div>
+    <div class="flow-diagram">
+      <div class="flow-node">0h — cliente manda mensagem</div><span class="flow-arrow">→</span>
+      <div class="flow-node success">0h-24h — responda com qualquer texto</div><span class="flow-arrow">→</span>
+      <div class="flow-node danger">+24h — apenas templates funcionam</div>
+    </div>
+  </section><hr class="section-divider">
+  <section id="best-practices"><h2>✅ Boas Práticas</h2>
+    <ul class="checklist">
+      <li><i data-lucide="check-circle"></i> Envie mensagens apenas das 8h às 20h</li>
+      <li><i data-lucide="check-circle"></i> Use o nome do contato para personalizar</li>
+      <li><i data-lucide="check-circle"></i> Mantenha as mensagens curtas e diretas</li>
+      <li><i data-lucide="check-circle"></i> Respeite o opt-out — se alguém pedir para parar, pare</li>
+      <li><i data-lucide="check-circle"></i> Teste os fluxos com seu próprio número antes de ativar</li>
+      <li><i data-lucide="check-circle"></i> Nunca envie a mesma mensagem para mais de 100 contatos por vez sem warmup</li>
+    </ul>
+  </section><hr class="section-divider">
+  <section id="connecting"><h2>🔗 Conectando o WhatsApp</h2>
+    <div class="tabs"><button class="tab-btn active" data-tab="tab-unofficial">API Não Oficial</button><button class="tab-btn" data-tab="tab-official">API Oficial</button></div>
+    <div class="tab-content active" id="tab-unofficial">
+      <div class="step-cards">
+        <div class="step-card"><div class="step-number">1</div><div><p>Configurações › Integrações › WhatsApp</p></div></div>
+        <div class="step-card"><div class="step-number">2</div><div><p>Clique em "Conectar via QR Code"</p></div></div>
+        <div class="step-card"><div class="step-number">3</div><div><p>Abra o WhatsApp no celular › 3 pontos › Aparelhos Conectados</p></div></div>
+        <div class="step-card"><div class="step-number">4</div><div><p>Clique em "Conectar Aparelho" e escaneie o QR</p></div></div>
+        <div class="step-card"><div class="step-number">5</div><div><p>Aguarde a confirmação</p></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-official">
+      <div class="step-cards">
+        <div class="step-card"><div class="step-number">1</div><div><p>Configurações › Integrações › WhatsApp Business API</p></div></div>
+        <div class="step-card"><div class="step-number">2</div><div><p>Clique em "Iniciar Aprovação Meta"</p></div></div>
+        <div class="step-card"><div class="step-number">3</div><div><p>Siga o processo de verificação da Meta Business</p></div></div>
+        <div class="step-card"><div class="step-number">4</div><div><p>Após aprovação (2-5 dias), configure os templates</p></div></div>
+        <div class="step-card"><div class="step-number">5</div><div><p>Associe o número aprovado</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/conversations/unified-inbox.html" onclick="event.preventDefault();loadPage('pages/conversations/unified-inbox.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 3.1 — Inbox Unificado</span></a>
+    <a href="?page=pages/calendars/overview.html" class="next" onclick="event.preventDefault();loadPage('pages/calendars/overview.html')"><span class="nav-label">Próxima</span><span class="nav-title">4.1 — Calendários →</span></a>
+  </nav>
+</article>

@@ -1,0 +1,44 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><span class="current">O que são Automações</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="zap"></i></div><h1>O que são Automações <span class="badge">Funcionalidade essencial</span></h1><p class="page-summary">O conceito de automação e como ele muda a forma de trabalhar.</p></header>
+
+  <section id="concept"><h2>⚡ O Conceito de Automação</h2>
+    <p>Uma automação é uma sequência de ações que acontece automaticamente quando um evento específico ocorre. Você configura uma vez e ela trabalha 24 horas por dia, todos os dias.</p>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> Pense em uma automação como uma receita de bolo: quando o ingrediente X entra (TRIGGER), o sistema executa Y e Z (AÇÕES). Você não precisa estar presente.</div>
+    <div class="feature-card" style="margin:24px 0">
+      <h3>Exemplo real</h3>
+      <ul style="margin:0"><li><strong>Trigger:</strong> Lead manda mensagem no WhatsApp</li><li><strong>Espera:</strong> 2 minutos</li><li><strong>Ação 1:</strong> Sistema responde com mensagem de boas-vindas</li><li><strong>Ação 2:</strong> Cria oportunidade no pipeline</li><li><strong>Ação 3:</strong> Notifica o consultor responsável</li></ul>
+    </div>
+  </section><hr class="section-divider">
+  <section id="components"><h2>🧩 Componentes de uma Automação</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="play-circle"></i></div><h3>TRIGGER (Gatilho) <span class="badge--green badge">Início</span></h3><p>O evento que inicia tudo. Pode ser uma mensagem recebida, formulário preenchido, reunião agendada, pagamento confirmado, e muito mais.</p></div>
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="git-branch"></i></div><h3>CONDIÇÃO (Opcional) <span class="badge--yellow badge">Se / Então</span></h3><p>Uma bifurcação: SE o lead tem a tag X, faça A. SE não tem, faça B. Permite personalizar o caminho com base em dados do contato.</p></div>
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="arrow-right-circle"></i></div><h3>AÇÃO <span class="badge">Resultado</span></h3><p>O que o sistema executa: enviar mensagem, criar tag, mover no pipeline, atribuir responsável, esperar X horas, criar tarefa.</p></div>
+    </div>
+  </section><hr class="section-divider">
+  <section id="examples"><h2>💡 Exemplos de Automações Comuns</h2>
+    <div class="tabs"><button class="tab-btn active" data-tab="tab-ex1">Primeiro Contato</button><button class="tab-btn" data-tab="tab-ex2">Lembrete de Reunião</button><button class="tab-btn" data-tab="tab-ex3">Follow-up</button><button class="tab-btn" data-tab="tab-ex4">Pós No-Show</button></div>
+    <div class="tab-content active" id="tab-ex1"><div class="flow-diagram"><div class="flow-node">Lead manda mensagem</div><span class="flow-arrow">→</span><div class="flow-node">Aguarda 2min</div><span class="flow-arrow">→</span><div class="flow-node">Responde automaticamente</div><span class="flow-arrow">→</span><div class="flow-node">Cria oportunidade</div><span class="flow-arrow">→</span><div class="flow-node final">Notifica consultor</div></div></div>
+    <div class="tab-content" id="tab-ex2"><div class="flow-diagram"><div class="flow-node">Reunião agendada</div><span class="flow-arrow">→</span><div class="flow-node">24h antes: SMS lembrete</div><span class="flow-arrow">→</span><div class="flow-node final">1h antes: outro SMS</div></div></div>
+    <div class="tab-content" id="tab-ex3"><div class="flow-diagram"><div class="flow-node">Proposta enviada</div><span class="flow-arrow">→</span><div class="flow-node">Aguarda 1 dia</div><span class="flow-arrow">→</span><div class="flow-node">Verifica se fechou</div><span class="flow-arrow">→</span><div class="flow-node">Não: envia follow-up</div><span class="flow-arrow">→</span><div class="flow-node final">Aguarda mais 2 dias</div></div></div>
+    <div class="tab-content" id="tab-ex4"><div class="flow-diagram"><div class="flow-node danger">Lead não aparece</div><span class="flow-arrow">→</span><div class="flow-node">Aplica tag no-show</div><span class="flow-arrow">→</span><div class="flow-node">Envia mensagem empática</div><span class="flow-arrow">→</span><div class="flow-node final">Link de reagendamento</div></div></div>
+  </section><hr class="section-divider">
+  <section id="what-you-can-automate"><h2>🤖 O que Você Pode Automatizar</h2>
+    <table><thead><tr><th>Situação</th><th>O que automatizar</th></tr></thead><tbody>
+      <tr><td>Novo lead entra</td><td>Resposta imediata + criação de oportunidade</td></tr>
+      <tr><td>Lead não responde</td><td>Sequência de 3 follow-ups em 7 dias</td></tr>
+      <tr><td>Reunião agendada</td><td>Confirmação + lembretes 24h e 1h antes</td></tr>
+      <tr><td>Reunião não aconteceu</td><td>Mensagem empática + link de reagendamento</td></tr>
+      <tr><td>Proposta enviada</td><td>Acompanhamento automático por 7 dias</td></tr>
+      <tr><td>Cliente fecha negócio</td><td>Boas-vindas + início do onboarding</td></tr>
+      <tr><td>Data de renovação se aproxima</td><td>Aviso automático 7 dias antes</td></tr>
+      <tr><td>Review negativo no Google</td><td>Alerta urgente para o time</td></tr>
+    </tbody></table>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/pipelines/what-is-pipeline.html" onclick="event.preventDefault();loadPage('pages/pipelines/what-is-pipeline.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 5.1 — Pipeline</span></a>
+    <a href="?page=pages/automations/visual-builder.html" class="next" onclick="event.preventDefault();loadPage('pages/automations/visual-builder.html')"><span class="nav-label">Próxima</span><span class="nav-title">6.2 — Construtor Visual →</span></a>
+  </nav>
+</article>

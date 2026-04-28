@@ -1,0 +1,45 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Home</a><span class="separator">›</span><a href="?page=pages/crm/overview.html" onclick="event.preventDefault();loadPage('pages/crm/overview.html')">CRM e Contatos</a><span class="separator">›</span><span class="current">Criando Contatos</span></nav>
+  <header class="page-header"><div class="page-icon"><i data-lucide="user-plus"></i></div><h1>Criando e Editando Contatos</h1><p class="page-summary">Como criar contatos manualmente, importar por CSV e capturar por formulário.</p></header>
+
+  <section id="create-manual"><h2>✏️ Criar Manualmente</h2>
+    <div class="step-cards">
+      <div class="step-card"><div class="step-number">1</div><div><p>Acesse <strong>Contatos</strong> no menu lateral</p></div></div>
+      <div class="step-card"><div class="step-number">2</div><div><p>Clique em <strong>"Novo Contato"</strong> no canto superior direito</p></div></div>
+      <div class="step-card"><div class="step-number">3</div><div><p>Preencha nome, telefone e e-mail (os demais campos são opcionais)</p></div></div>
+      <div class="step-card"><div class="step-number">4</div><div><p>Clique em <strong>Salvar</strong></p></div></div>
+    </div>
+    <div class="image-placeholder"><i data-lucide="image"></i> [IMAGEM: modal de criação de contato com campos destacados]</div>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> O telefone é o campo mais importante para automações de WhatsApp e SMS. Certifique-se de incluir o DDD e o código do país (+55 para Brasil).</div>
+  </section><hr class="section-divider">
+  <section id="import-csv"><h2>📥 Importar por CSV</h2>
+    <div class="step-cards">
+      <div class="step-card"><div class="step-number">1</div><div><p>Acesse Contatos › Importar</p></div></div>
+      <div class="step-card"><div class="step-number">2</div><div><p>Faça o download do modelo de CSV (template)</p></div></div>
+      <div class="step-card"><div class="step-number">3</div><div><p>Preencha sua planilha seguindo o modelo</p></div></div>
+      <div class="step-card"><div class="step-number">4</div><div><p>Faça o upload do arquivo</p></div></div>
+      <div class="step-card"><div class="step-number">5</div><div><p>Mapeie as colunas da sua planilha para os campos do CRM</p></div></div>
+      <div class="step-card"><div class="step-number">6</div><div><p>Revise a prévia e confirme a importação</p></div></div>
+    </div>
+    <div class="callout callout--warning"><span class="callout-label">ATENÇÃO</span> A plataforma verifica duplicatas automaticamente pelo e-mail ou telefone. Se um contato já existir, ele será atualizado, não duplicado.</div>
+  </section><hr class="section-divider">
+  <section id="capture-form"><h2>📋 Capturar por Formulário</h2>
+    <p>A forma mais eficiente. Quando um lead preenche um formulário no seu site ou landing page, o CRM cria o contato automaticamente e dispara as automações configuradas.</p>
+    <div class="flow-diagram">
+      <div class="flow-node">Lead preenche formulário</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Contato criado no CRM</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Tag adicionada</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Workflow disparado</div><span class="flow-arrow">→</span>
+      <div class="flow-node final">Mensagem enviada em 2 min</div>
+    </div>
+  </section><hr class="section-divider">
+  <section id="edit-contact"><h2>✏️ Editando um Contato</h2>
+    <ol><li>Abra o contato clicando no nome</li><li>Clique no lápis/editar ao lado do campo</li><li>Altere e salve</li></ol>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> Todas as alterações ficam registradas no histórico do contato com data, hora e usuário que fez a mudança.</div>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/crm/overview.html" onclick="event.preventDefault();loadPage('pages/crm/overview.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 2.1 — Visão Geral do CRM</span></a>
+    <a href="?page=pages/crm/tags-segmentation.html" class="next" onclick="event.preventDefault();loadPage('pages/crm/tags-segmentation.html')"><span class="nav-label">Próxima</span><span class="nav-title">2.3 — Tags e Segmentação →</span></a>
+  </nav>
+</article>

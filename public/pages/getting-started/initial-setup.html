@@ -1,0 +1,82 @@
+<article class="doc-page">
+  <nav class="breadcrumb"><a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')">Primeiros Passos</a><span class="separator">›</span><span class="current">Configuração Inicial</span></nav>
+  <header class="page-header">
+    <div class="page-icon"><i data-lucide="settings"></i></div>
+    <h1>Configuração Inicial</h1>
+    <p class="page-summary">Os 7 primeiros passos para deixar a plataforma pronta para usar.</p>
+  </header>
+
+  <section id="overview">
+    <h2>⚡ Por onde começar</h2>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> Siga os passos abaixo na ordem. Cada um depende do anterior para funcionar corretamente. Você vai levar entre 30 e 60 minutos para completar tudo.</div>
+  </section>
+  <hr class="section-divider">
+  <section id="step-1">
+    <h2>Passo 1 — Dados da Conta</h2>
+    <div class="step-card"><div class="step-number">1</div><div><h4>Preencher informações básicas</h4><p>Nome da empresa, endereço, fuso horário e logo.</p><p><strong>Onde:</strong> Configurações › Dados da Conta › Informações Gerais</p></div></div>
+    <div class="image-placeholder"><i data-lucide="image"></i> [IMAGEM: tela de configurações gerais com campos preenchidos]</div>
+    <p><strong>Por que importa:</strong> O nome e logo aparecem em todos os e-mails e páginas enviados pela plataforma.</p>
+  </section>
+  <hr class="section-divider">
+  <section id="step-2">
+    <h2>Passo 2 — Configurar E-mail (SMTP)</h2>
+    <div class="step-card"><div class="step-number">2</div><div><h4>Conectar e-mail de envio</h4><p>Para que as mensagens saiam com o nome da sua empresa.</p><p><strong>Onde:</strong> Configurações › E-mail › SMTP</p></div></div>
+    <div class="image-placeholder"><i data-lucide="image"></i> [IMAGEM: tela de configuração SMTP com campos de host, porta e credenciais]</div>
+    <div class="callout callout--warning"><span class="callout-label">ATENÇÃO</span> Se não configurar o SMTP, os e-mails sairão com um endereço genérico da plataforma e podem cair no spam.</div>
+    <p><strong>Serviços compatíveis:</strong> Gmail (via App Password), Outlook, SMTP próprio, SendGrid, Mailgun.</p>
+  </section>
+  <hr class="section-divider">
+  <section id="step-3">
+    <h2>Passo 3 — Número de Telefone</h2>
+    <div class="step-card"><div class="step-number">3</div><div><h4>Conectar número de telefone</h4><p>Para enviar e receber SMS e WhatsApp.</p><p><strong>Onde:</strong> Configurações › Telefone</p></div></div>
+    <div class="callout callout--info"><span class="callout-label">NOTA</span> Se você já usa WhatsApp com um número próprio, pode conectar a API não oficial escaneando um QR code.</div>
+  </section>
+  <hr class="section-divider">
+  <section id="step-4">
+    <h2>Passo 4 — Criar um Calendário</h2>
+    <div class="step-card"><div class="step-number">4</div><div><h4>Calendário de agendamentos</h4><p>Configure sua disponibilidade para reuniões.</p><p><strong>Onde:</strong> Calendários › Criar Novo</p></div></div>
+    <p><strong>Configurações mínimas:</strong> nome do calendário, fuso horário, dias e horários disponíveis, duração da reunião.</p>
+  </section>
+  <hr class="section-divider">
+  <section id="step-5">
+    <h2>Passo 5 — Criar um Pipeline</h2>
+    <div class="step-card"><div class="step-number">5</div><div><h4>Funil de vendas visual</h4><p>Acompanhe seus leads visualmente.</p><p><strong>Onde:</strong> Oportunidades › Pipelines › Criar Pipeline</p></div></div>
+    <p><strong>Estágios sugeridos:</strong></p>
+    <div class="flow-diagram">
+      <div class="flow-node">Novo Lead</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Contato Realizado</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Reunião Agendada</div><span class="flow-arrow">→</span>
+      <div class="flow-node">Proposta Enviada</div><span class="flow-arrow">→</span>
+      <div class="flow-node success">Fechado Ganho</div>
+    </div>
+  </section>
+  <hr class="section-divider">
+  <section id="step-6">
+    <h2>Passo 6 — Conectar Integrações</h2>
+    <div class="step-card"><div class="step-number">6</div><div><h4>Centralizar ferramentas</h4><p>Conecte as ferramentas que você já usa.</p><p><strong>Onde:</strong> Configurações › Integrações</p></div></div>
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="calendar"></i></div><h3>Google Calendar</h3><p>Sincroniza disponibilidade</p></div>
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="star"></i></div><h3>Google Meu Negócio</h3><p>Reviews e localização</p></div>
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="share-2"></i></div><h3>Meta (Facebook/Instagram)</h3><p>Anúncios e DMs</p></div>
+      <div class="feature-card"><div class="feature-card-icon"><i data-lucide="credit-card"></i></div><h3>Stripe</h3><p>Pagamentos e cobranças</p></div>
+    </div>
+  </section>
+  <hr class="section-divider">
+  <section id="step-7">
+    <h2>Passo 7 — Testar o Sistema</h2>
+    <div class="step-card"><div class="step-number">7</div><div><h4>Teste completo</h4><p>Crie um contato de teste e passe pelo fluxo completo.</p></div></div>
+    <ul class="checklist">
+      <li><i data-lucide="check-circle"></i> Criar contato manualmente com seus próprios dados</li>
+      <li><i data-lucide="check-circle"></i> Enviar uma mensagem de teste por SMS</li>
+      <li><i data-lucide="check-circle"></i> Enviar um e-mail de teste</li>
+      <li><i data-lucide="check-circle"></i> Agendar uma reunião no seu calendário</li>
+      <li><i data-lucide="check-circle"></i> Criar uma oportunidade na pipeline</li>
+    </ul>
+    <div class="callout callout--success"><span class="callout-label">DICA</span> Se todos os itens acima funcionaram, sua conta está pronta. Bom trabalho! 🎉</div>
+  </section>
+
+  <nav class="page-nav">
+    <a href="?page=pages/getting-started/introduction.html" onclick="event.preventDefault();loadPage('pages/getting-started/introduction.html')"><span class="nav-label">Anterior</span><span class="nav-title">← 1.1 — Introdução</span></a>
+    <a href="?page=pages/getting-started/navigation.html" class="next" onclick="event.preventDefault();loadPage('pages/getting-started/navigation.html')"><span class="nav-label">Próxima</span><span class="nav-title">1.3 — Navegando na Plataforma →</span></a>
+  </nav>
+</article>
