@@ -5,12 +5,12 @@ const http = require('http');
 const app = express();
 const DEFAULT_PORT = parseInt(process.env.PORT || '3000', 10);
 
-// Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from 'docs' directory
+app.use(express.static(path.join(__dirname, 'docs')));
 
 // Fallback to index.html for SPA routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
 
 function startServer(port) {

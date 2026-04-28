@@ -48,7 +48,7 @@ Abra `http://localhost:3000` no navegador. A documentação já estará rodando.
 
 ## Personalizando para sua agência
 
-Toda a personalização é feita em **um único arquivo**: `public/config.js`.  
+Toda a personalização é feita em **um único arquivo**: `docs/config.js`.  
 Abra esse arquivo em qualquer editor de texto (VS Code, Notepad++, etc.) e altere os valores.
 
 ### Identidade visual
@@ -63,7 +63,7 @@ faviconUrl: './assets/favicon.ico',  // ícone da aba do navegador
 **Para trocar o logo:**
 1. Exporte o logo da sua agência em formato `.svg` ou `.png`
 2. Renomeie o arquivo para `logo.svg` (ou atualize o caminho em `logoUrl`)
-3. Coloque o arquivo em `public/assets/`
+3. Coloque o arquivo em `docs/assets/`
 4. O logo antigo será substituído automaticamente
 
 ### Cores
@@ -112,7 +112,7 @@ Adicione quantas features quiser nesse array. Elas aparecem automaticamente na p
 
 ### Atualizando o conteúdo das páginas
 
-Cada página está em `public/pages/`. Para editar o texto de uma página, abra o arquivo `.html` correspondente e edite diretamente o conteúdo entre as tags.
+Cada página está em `docs/pages/`. Para editar o texto de uma página, abra o arquivo `.html` correspondente e edite diretamente o conteúdo entre as tags.
 
 Os títulos `<h2 id="...">` geram automaticamente os itens do menu lateral direito (TOC). Não remova os atributos `id`.
 
@@ -157,7 +157,7 @@ O GitHub Pages serve o repositório como um site público gratuitamente.
 2. Clique em **Settings** (ícone de engrenagem)
 3. No menu lateral, clique em **Pages**
 4. Em **Source**, selecione **Deploy from a branch**
-5. Em **Branch**, selecione `main` e a pasta `/public`
+5. Em **Branch**, selecione `main` e a pasta `/docs`
 6. Clique em **Save**
 
 Aguarde 1 a 2 minutos. A URL do site aparecerá no topo da página, no formato:
@@ -229,7 +229,7 @@ Para ativá-lo com a IA da sua conta, siga os passos abaixo.
 
 #### Passo 4 — Conectar ao config.js
 
-Abra `public/config.js` e preencha:
+Abra `docs/config.js` e preencha:
 
 ```javascript
 aiEnabled: true,
@@ -263,7 +263,7 @@ saas-documentation-htc/
 ├── package.json              ← dependências (Express)
 ├── server.js                 ← servidor local (npm start)
 ├── README.md                 ← este arquivo
-└── public/
+└── docs/
     ├── index.html            ← shell principal da documentação
     ├── config.js             ← ÚNICO ARQUIVO QUE VOCÊ PRECISA EDITAR
     └── assets/
@@ -299,10 +299,10 @@ saas-documentation-htc/
 Sim. No GitHub Pages, vá em Settings > Pages > Custom Domain e configure seu domínio. Você vai precisar adicionar um registro CNAME no seu provedor de DNS apontando para `seu-usuario.github.io`.
 
 **O site funciona sem internet?**  
-Parcialmente. Os ícones (Lucide via CDN) precisam de conexão. Para uso offline completo, baixe o Lucide e coloque localmente em `public/assets/js/lucide.min.js`, atualizando o `<script>` no `index.html`.
+Parcialmente. Os ícones (Lucide via CDN) precisam de conexão. Para uso offline completo, baixe o Lucide e coloque localmente em `docs/assets/js/lucide.min.js`, atualizando o `<script>` no `index.html`.
 
 **Como adicionar novas páginas?**  
-Crie um novo arquivo `.html` em `public/pages/sua-pasta/`, siga o template das páginas existentes e adicione a entrada correspondente no array `NAV_STRUCTURE` dentro de `public/assets/js/app.js`.
+Crie um novo arquivo `.html` em `docs/pages/sua-pasta/`, siga o template das páginas existentes e adicione a entrada correspondente no array `NAV_STRUCTURE` dentro de `docs/assets/js/app.js`.
 
 **Como traduzir para outro idioma?**  
-Edite diretamente o conteúdo HTML de cada página em `public/pages/`. Para múltiplos idiomas, estruture em subpastas por idioma (`pages/en/`, `pages/pt/`) e ajuste o `loadPage()` em `app.js` para ler o idioma do `config.js`.
+Edite diretamente o conteúdo HTML de cada página em `docs/pages/`. Para múltiplos idiomas, estruture em subpastas por idioma (`pages/en/`, `pages/pt/`) e ajuste o `loadPage()` em `app.js` para ler o idioma do `config.js`.
